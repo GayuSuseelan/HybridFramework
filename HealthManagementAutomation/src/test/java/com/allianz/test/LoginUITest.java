@@ -1,17 +1,33 @@
 package com.allianz.test;
 
+import com.allianz.base.AutomationWrapper;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LoginUITest {
+import java.time.Duration;
+
+public class LoginUITest extends AutomationWrapper {
+
+
     @Test(priority = 1)
     public void titleTest(){
-        System.out.println("Titletest");
+
+       String actualTitle=driver.getTitle();
+       Assert.assertEquals(actualTitle,"OrangeHRM");
 
     }
-    @Test(priority = 2)
+    @Test
     public void applicationDescriptionTest()
     {
-        System.out.println("app");
+
+        String actualTitle=driver.getTitle();
+        String actualText=driver.findElement(By.xpath("//p[text()='OrangeHRM OS 5.6.1']")).getText();
+        Assert.assertEquals(actualText,"OrangeHRM OS 5.6.1");
 
     }
 }
