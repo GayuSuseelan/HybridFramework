@@ -9,7 +9,7 @@ import java.io.File;
 
 public class AddEmployeeTest extends AutomationWrapper {
     @Test
-    public void uploadInvalidDisplayPics(){
+    public void uploadInvalidDisplayPics() throws InterruptedException {
         File file=new File("src/test/resources/Files/Xpath.text");
         String path= file.getAbsolutePath();
 
@@ -18,11 +18,9 @@ public class AddEmployeeTest extends AutomationWrapper {
             driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
             driver.findElement(By.xpath("//span[text()='PIM']")).click();
             driver.findElement(By.linkText("Add Employee")).click();
-
             driver.findElement(By.xpath("//input[@type='file']")).sendKeys(path);
-
-            String actualError=driver.findElement(By.xpath("//span[contains(normalize-space(),'File type')]")).getText();
-            Assert.assertTrue(actualError.contains("File type not allowed"));  //expect true
+        String actualError=driver.findElement(By.xpath("//span[contains(normalize-space(),'File type')]")).getText();
+        Assert.assertTrue(actualError.contains("File type not allowed"));  //expect true
 
             //click on PIM menu
             //click on add employee
