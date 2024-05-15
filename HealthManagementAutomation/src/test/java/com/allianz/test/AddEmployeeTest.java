@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import java.io.File;
 
 public class AddEmployeeTest extends AutomationWrapper {
-    @Test
+    @Test(groups = {"addemployee","smoke"})
     public void uploadInvalidDisplayPics() throws InterruptedException {
         File file=new File("src/test/resources/Files/Xpath.text");
         String path= file.getAbsolutePath();

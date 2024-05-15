@@ -13,15 +13,14 @@ import java.time.Duration;
 
 public class LoginUITest extends AutomationWrapper {
 
-
-    @Test(priority = 1)
+    @Test(groups = {"ui","smoke"})
     public void titleTest(){
 
        String actualTitle=driver.getTitle();
        Assert.assertEquals(actualTitle,"OrangeHRM");
 
     }
-    @Test
+    @Test(groups = {"ui"})
     public void applicationDescriptionTest()
     {
 

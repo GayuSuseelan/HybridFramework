@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Orange HRM Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="UI-Chrome Test(failed)">
+    <groups>
+      <run>
+        <include name="smoke"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.allianz.test.AddEmployeeTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="uploadInvalidDisplayPics"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.allianz.test.AddEmployeeTest -->
+      <class name="com.allianz.test.LoginTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="validLoginTest"/>
+          <include name="invalidLoginTest" invocation-numbers="0"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.allianz.test.LoginTest -->
+    </classes>
+  </test> <!-- UI-Chrome Test(failed) -->
+</suite> <!-- Failed suite [Orange HRM Suite] -->

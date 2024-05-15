@@ -23,11 +23,9 @@ public class DataUtils {
     }
 
     @DataProvider
-    public Object[][] commonDataProvider(Method mtd) throws IOException
-    {
-        //Current @Test name is sheetname
-        String currentTestName=mtd.getName();
-        Object[][] data=ExcelUtils.getSheetIntoTwoDimensionalArray("src/test/resources/Files/test_data/hrm_data.xlsx", currentTestName);
+    public Object[][] commonDataProvider (Method mtd) throws IOException {
+      String currentTestName= mtd.getName();
+      Object [][] data= ExcelUtils.getSheetIntoTwoDimensionalArray("src/test/resources/Files/test_data/hrm_data.xlsx", currentTestName);
         return data;
     }
 }
